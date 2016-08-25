@@ -14,19 +14,30 @@
     background-color: #293038;
     font-size:14px; 
     color:#fff;
-    overflow:auto;
+    overflow:scroll;
 }
 
 
 /**********************************手风琴菜单栏顶部************************************/
 .left_menu_flex{
-    width:100%;
+    width:180px;
     height:30px;
     background-color:#394555;
+    cursor: pointer;
+    line-height:30px;
 }
 
 .left_menu_flex:hover{
     background-color:#37424f;
+}
+
+.left_menu_flex .to_left{
+    margin-left:60px;
+}
+
+.left_menu_flex .to_right{
+    display:none;
+    float:left;
 }
 
 /*******************************手风琴菜单栏各一级标题*********************************/
@@ -36,11 +47,25 @@
     line-height:40px;
     cursor: pointer;
     background-color:#37424f;
-    border-bottom:1px solid #414d5c;    
+    border-bottom:1px solid #414d5c;
+    position:relative;
 }
 
 .left_menu .panel-head:hover{
     background-color:#414d5c;
+}
+
+.panel-head .content{
+    position:absolute;
+    top:0;
+    left:50px;
+}
+
+.panel-head .to_up{
+    position:absolute;
+    top:0;
+    left:0;
+    display:none;
 }
 
 /*******************************手风琴菜单栏各二级标题*********************************/
@@ -79,6 +104,16 @@
     cursor: pointer;
 }
 
+/******************************小提示部分********************************/
+#tips{
+    width:130px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    display:none;
+}
+
+/******************************主体body部分********************************/
 
 
 
