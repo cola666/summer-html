@@ -6,15 +6,18 @@
     position:fixed;
     top:50px;
     left:0px;
+    color:#fff;
 }
 
 .left_menu{
-    width:195px;
+    width:197px;
     height:100%;
     background-color: #293038;
     font-size:14px; 
-    color:#fff;
     overflow:scroll;
+    position:relative;
+    font-size:small;
+    font-family:sans-serif;
 }
 
 
@@ -32,7 +35,7 @@
 }
 
 .left_menu_flex .to_left{
-    margin-left:60px;
+    margin-left:50px;
 }
 
 .left_menu_flex .to_right{
@@ -75,9 +78,8 @@
     line-height:40px;
     cursor: pointer;
 }
-
-.collapse_option:hover{
-    background-color:#37424f;
+.on{
+    background-color:#0099cc;
 }
 
 /********************************手风琴菜单栏各图标**********************************/
@@ -97,24 +99,42 @@
 }
 
 /******************************右侧展开栏图标********************************/
-.left_menu_right .menu_right_icon{
+.left_menu_right .menu_right_iconl{
     position:absolute;
-    top:5px;
-    right:5px;
+    right:-18px;
     cursor: pointer;
 }
 
+.left_menu_right .menu_right_iconr{
+    position:absolute;
+    top:5px;
+    left:-20px;
+    cursor: pointer;
+    display:none;
+}
 /******************************小提示部分********************************/
 #tips{
-    width:130px;
+    display:inline;
+    width:110px;
     height:40px;
     line-height:40px;
     text-align:center;
+    position:relative;
+    background-color:#556270;
+    border-radius:55px 0 0 55px;
     display:none;
+    z-index:2;
 }
 
 /******************************主体body部分********************************/
-
+.body_main{
+    height:1500px;
+    width:800px;
+    border:1px solid #ccc;
+    position:relative;
+    left:250px;
+    top:50px;
+}
 
 
 

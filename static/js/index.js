@@ -7,14 +7,14 @@ $(document).on("click",".left_menu_flex",function(){
         $(".left_menu_flex .to_left").css("display","none");
         $(".content").css("display","none");
         $(".left_main").css("width","50px");
-        $(".left_menu").css("width","65px");
+        $(".left_menu").css("width","67px");
         $(".left_menu_right").css("left","50px");
     }else if($(".left_menu_flex .to_right").css("display")=="block"){
         $(".left_menu_flex .to_right").css("display","none");
         $(".left_menu_flex .to_left").css("display","block");
         $(".content").css("display","inline-block");
         $(".left_main").css("width","180px");
-        $(".left_menu").css("width","195px");
+        $(".left_menu").css("width","197px");
         $(".left_menu_right").css("left","180px");
     }
 })
@@ -38,35 +38,49 @@ $(document).on("click",".collapse_option",function(){
     $(".left_menu_flex .to_left").css("display","none");
     $(".content").css("display","none");
     $(".left_main").css("width","50px");
-    $(".left_menu").css("width","65px");
-    $(".menu_right_icon").html("&#xe609;");
+    $(".left_menu").css("width","67px");
+    $(".menu_right_iconl").html("&#xe603;");
+    $(".menu_right_iconl").css("top",height);
+    $(".menu_right_iconr").css("display","none");
     $(".left_menu_right").css("left","50px");
     $(".left_menu_right").width("0");
     $(".left_menu_right").animate({width:"180px"});
-    $(".collapse_option").css("background-color","#293038");
-    $(this).css("background-color","#0099cc");
-})
-
-/***********************菜单栏二级菜单鼠标移入提示信息显示**************************/ 
-/*$(document).on("mouseover",".collapse_option",function(e){
-    var text = $(".content",$(this)).html();
-    $("#tips").css("display","block");
-    $("#tips").html(text);
-    var left = e.clientX + 5 ;
-    var top = e.clientY + 5 ;
-    $("#tip")
-})
-
-$(document).on("mouseout",".collapse_option",function(e){
-    var text = $(".content",$(this)).html();
-    $("#tips").css("display","none");
-})*/
+    $(".collapse_option").removeClass("on");
+    $(this).addClass("on");
+    
+}) 
 
 /***********************三级菜单栏图标点击菜单收缩**************************/ 
-$(document).on("click",".menu_right_icon",function(){
-    $(".menu_right_icon").html("");
-    $(".left_menu_right").css("width","0");
+
+var height = $(window).height()/2 +　"px";
+    
+$(document).on("click",".menu_right_iconl",function(){
+    $(".menu_right_iconl").html("");
+    $(".left_menu_right").animate({width:"0"});
+    $(".menu_right_iconr").css({"display":"block","top":height});
+    $(".menu_right_iconr").html("&#xe602;");
 })
 
+$(document).on("click",".menu_right_iconr",function(){
+    $(".menu_right_iconl").html("&#xe603;");
+    $(".left_menu_right").animate({width:"180px"});
+    $(this).css("display","none");
+})
+
+/***********************二级菜单鼠标移入移出小提示**************************/ 
+$(document).on("mousemove",".left_menu .icon",function(e){
+    if($(".left_menu").css("width") == "67px"){
+    var parent = $(this).parent();
+    var text = $(".content",$(parent)).html();
+    $("#tips").css("display","none")
+    var top = e.pageY - 20 + "px";
+    var left = e.pageX + 10 + "px";
+    $("#tips").html(text);
+    $("#tips").show().css({"top":top,"left":left});}
+})
+
+$(document).on("mouseleave",".left_menu .icon",function(){
+    $("#tips").css("display","none");
+})
 
 })
