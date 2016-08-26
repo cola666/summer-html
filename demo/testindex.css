@@ -1,8 +1,7 @@
-body{
+body {
     padding: 0;
     margin: 0;
 }
-
 
 .iframe-topbar {
     position: fixed;
@@ -30,6 +29,10 @@ body{
     background-color: #293038;
     z-index: 102;
     overflow-x: hidden;
+    -o-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
 }
 
 .iframe-product {
@@ -65,14 +68,15 @@ body{
 }
 
 .menu-box {
-    background-color:darkgray;
+    background-color: darkgray;
     margin-bottom: 20px;
 }
 
-.menu-head,.menu-item{
+.menu-head,
+.menu-item {
     height: 30px;
 }
+
 .menu-head {
     background-color: black;
-    
 }

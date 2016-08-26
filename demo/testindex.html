@@ -9,18 +9,20 @@
 
 <body>
     <div class="iframe-cont">
-        <div class="iframe-topbar"></div>
-        
-        
+        <div id="iframe-topbar" class="iframe-topbar">
+
+        </div>
+
+
         <div class="iframe-body">
-           
+
             <div id="side" class="iframe-side">
-               <a onclick="chengeside(this)" href="javascript:void(0)" data-side-type="full">chenge</a>
+                <a onclick="chengeside(this)" href="javascript:void(0)" data-side-type="full">chenge</a>
                 <div class="menu-box">
-                    <div class="menu-head"></div>
-                    <div class="menu-item"></div>
-                    <div class="menu-item"></div>
-                    <div class="menu-item"></div>
+                    <div class="menu-head">这是一级菜单这是一级菜单</div>
+                    <div class="menu-item">这是一级菜单这是一级菜单</div>
+                    <div class="menu-item">这是一级菜单这是一级菜单</div>
+                    <div class="menu-item">这是一级菜单这是一级菜单</div>
                 </div>
                 <div class="menu-box">
                     <div class="menu-head"></div>
@@ -29,38 +31,60 @@
                     <div class="menu-item"></div>
                 </div>
             </div>
-            
+
             <div id="product" class="iframe-product">
                 <div class="iframe-product-body">
-                    <div class="iframe-product-item"></div>
-                    <div class="iframe-product-item"></div>
-                    <div class="iframe-product-item"></div>
-                    <div class="iframe-product-item"></div>
-                    <div class="iframe-product-item"></div>
-                    <div class="iframe-product-item"></div>
-                </div>    
+                    <div class="iframe-product-item">这是一级菜单</div>
+                    <div class="iframe-product-item">这是一级菜单</div>
+                    <div class="iframe-product-item">这是一级菜单</div>
+                    <div class="iframe-product-item">这是一级菜单</div>
+                    <div class="iframe-product-item">这是一级菜单</div>
+                    <div class="iframe-product-item">这是一级菜单</div>
+                </div>
             </div>
         </div>
     </div>
-    
+
     <script type="text/javascript" src="/static/lib/jquery/jquery.min.js"></script>
     <script>
-        function chengeside(ele){
-//            console.log(ele);
+        function chengeside(ele) {
+            //            console.log(ele);
             var sideType = $(ele).data('side-type');
-            
-            if(sideType=='full'){
-                $("#side").css('width','50px');
-                $("#product").css('left','50px');
-                
-                $(ele).data('side-type','mini');
-            }else if(sideType=='mini'){
-                $("#side").css('width','180px');
-                $("#product").css('left','180px');
-                
-                $(ele).data('side-type','full');
+
+            if (sideType == 'full') {
+                $("#side").css('width', '50px');
+                $("#product").css('left', '50px');
+
+                $(ele).data('side-type', 'mini');
+            } else if (sideType == 'mini') {
+                $("#side").css('width', '180px');
+                $("#product").css('left', '180px');
+
+                $(ele).data('side-type', 'full');
             }
         }
+
+        $(function () {
+            $.ajax({
+                url: "./top_incould.html",
+                type: 'GET',
+                data: {
+                    // _id: user_id
+                },
+                async: false,
+                //- cache: false,
+                //- contentType: false,
+                //- processData: false,
+                success: function (data) {
+                    console.log(data);
+                    $("#iframe-topbar").html(data);
+                    //				cb(data);
+                },
+                error: function () {
+                    console.log('加载页面出错');
+                }
+            });
+        })
     </script>
 </body>
 
