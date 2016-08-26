@@ -1,4 +1,5 @@
 var test = new Object();
+
 $(function(){
     var topViewContent = $("#view_top");
     var topViewUrl = "/pages/pc/include/top.html";
@@ -21,7 +22,7 @@ test.pushHtml = function(ele,url){
         //- contentType: false,
         //- processData: false,
         success: function (data) {
-            console.log(data);
+//            console.log(data);
             $(ele).html(data);
             //				cb(data);
         },
