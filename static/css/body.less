@@ -1,0 +1,136 @@
+//主显示区域样式
+.viewFramework-body{
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    bottom: 0px;
+    background-color: #000;
+    z-index: 100;
+}
+
+//左菜单栏默认显示样式
+.viewFramework-sidebar{
+    width: 0px;
+    display: none;
+    position: fixed;
+    top: 50px;
+    bottom: 0px;
+    background-color: #293038;
+    z-index: 102;
+    overflow-x: hidden;
+    .sidebar-content{
+        width: 200px;
+        height: 100%;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    
+    .sidebar-fold {
+        height: 30px;
+        width: 180px;
+        background: #394555;
+        color: #aeb9c2;
+        text-align: center;
+        line-height: 30px !important;
+        font-size: 12px;
+        user-select: none;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+    }
+    .sidebar-nav{
+        width:180px;
+        .sidebar-title {
+            height: 40px;
+            background: #22282e;
+            color: #fff;
+            line-height: 40px;
+            position: relative;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+        }
+        .sidebar-trans {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            overflow: hidden;
+            .item{
+                display: block;
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                overflow: hidden;
+            }
+        }
+    }
+}
+//左菜单栏展开时显示样式
+.viewFramework-sidebar-full{
+    .viewFramework-sidebar{
+        width: 180px;
+        display: block;
+        
+    }
+}
+//左菜单栏收缩时展示样式
+.viewFramework-sidebar-mini{
+    .viewFramework-sidebar{
+        width: 50px;
+        display: block;
+        .sidebar-content{
+            width: 70px;
+        }
+    }
+}
+
+
+
+//右边主显示区域(容器框)默认显示样式
+.viewFramework-product{
+    width: auto;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    overflow: hidden;
+    background: #eaedf1;
+}
+//左菜单栏展开时显示样式
+.viewFramework-sidebar-full{
+    .viewFramework-product{
+        left: 180px;
+//        display: block;
+    }
+}
+//左菜单栏收缩时展示样式
+.viewFramework-sidebar-mini{
+    .viewFramework-product{
+        left: 50px;
+//        display: block;
+    }
+}
+
+//右边主显示区域显示域样式
+.viewFramework-product-body{
+    position: absolute;
+    width: auto;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
+    overflow-y: auto;
+    -o-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    
+//    测试用的代码
+    .test-item{
+        height: 200px;
+        margin-bottom: 30px;
+        background-color: aqua;
+    }
+}
